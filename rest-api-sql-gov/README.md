@@ -9,4 +9,5 @@ The database houses appointments made to a social services government agency, an
 Run the following scripts from your terminal (e.g., "source ./create-database.sh"):
  - create-database.sh
  - deploy-rest-api.sh
-making sure to replace the variable names with the GCP configuration you desire.
+ 
+ making sure to replace the variable names with the GCP configuration you desire.
