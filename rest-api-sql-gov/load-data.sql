@@ -1,4 +1,4 @@
-use pet-theory;
+use social-service;
 
 CREATE TABLE appointments (
   id INT NOT NULL AUTO_INCREMENT,

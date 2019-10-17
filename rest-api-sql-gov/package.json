@@ -1,12 +1,12 @@
 {
-  "name": "pet-theory-appointments",
+  "name": "social-service-appointments",
   "version": "1.0.0",
-  "description": "REST API to access Pet Theory appointments",
+  "description": "REST API to access Social Service appointments",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "Martin Omander",
+  "author": "Martin Omander, Willis Zhang",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",

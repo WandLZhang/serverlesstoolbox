@@ -6,16 +6,18 @@
 PROJECT_ID=[YOUR GCP PROJECT ID FROM THE CLOUD CONSOLE]
 ROOT_PASSWORD=[COPY FROM create-database.sh]
 INSTANCE_NAME=[COPY FROM create-database.sh]
-DB_NAME=pet-theory
+DB_REGION=[COPY FROM create-database.sh]
+INST_CON_NAME=$PROJECT_ID:$DB_REGION:$INSTANCE_NAME
+DB_NAME=social-service
 
-gcloud builds submit --tag gcr.io/$PROJECT_ID/pet-theory-appointments \
+gcloud builds submit --tag gcr.io/$PROJECT_ID/social-service-appointments \
   --project $PROJECT_ID
 
-gcloud beta run deploy pet-theory-appointments \
-  --image gcr.io/$PROJECT_ID/pet-theory-appointments \
+gcloud beta run deploy social-service-appointments \
+  --image gcr.io/$PROJECT_ID/social-service-appointments \
   --platform managed \
   --region us-central1 \
   --allow-unauthenticated \
-  --set-cloudsql-instances $INSTANCE_NAME \
-  --update-env-vars INST_CON_NAME=$PROJECT_ID:us-central1:$INSTANCE_NAME,SQL_USER=root,SQL_PASSWORD=$ROOT_PASSWORD,SQL_NAME=$DB_NAME \
+  --set-cloudsql-instances $INST_CON_NAME \
+  --update-env-vars INST_CON_NAME=$INST_CON_NAME,SQL_USER=root,SQL_PASSWORD=$ROOT_PASSWORD,SQL_NAME=$DB_NAME \
   --project $PROJECT_ID
