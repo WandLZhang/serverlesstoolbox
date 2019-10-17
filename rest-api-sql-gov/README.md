@@ -1,4 +1,4 @@
-# Deploying an API for Coud SQL using Cloud Run
+# Deploying an API for Cloud SQL using Cloud Run
 
 ## Overview
 This tutorial has example scripts to deploy a Cloud SQL database and an API to Cloud Run, forked from [momander/serverlesstoolbox](https://github.com/momander/serverlesstoolbox/tree/master/rest-api-sql).
